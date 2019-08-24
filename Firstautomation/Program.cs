@@ -29,7 +29,7 @@ namespace Firstautomation
             LoginPage logininstance = new LoginPage(driver);
             logininstance.LoginSucess();
         }
-            
+
         [TearDown]
         public void AfterEachTestCase()
         {
@@ -44,32 +44,38 @@ namespace Firstautomation
             fvalidate.validate();
             EnterValues entervaluesinstance = new EnterValues(driver);
             entervaluesinstance.details();
-            SecondValidate svalidate = new SecondValidate(driver);
-            svalidate.validation();
+           // SecondValidate svalidate = new SecondValidate(driver);
+           // svalidate.validation();
         }
 
 
         [Test]
         public void EditnValidate()
         {
-            FirstValidate fvalidate = new FirstValidate(driver);
-            fvalidate.validate();
-            EnterValues entervaluesinstance = new EnterValues(driver);
-            entervaluesinstance.details();
-            
+           // FirstValidate fvalidate = new FirstValidate(driver);
+           // fvalidate.validate();
+           // EnterValues entervaluesinstance = new EnterValues(driver);
+           // entervaluesinstance.details();
+            EditData editinstance = new EditData(driver);
+            editinstance.editing();
+            editinstance.EditConfirm();
+
+
+
         }
         [Test]
         public void DeletenValidate()
         {
-            EnterValues entervaluesinstance = new EnterValues(driver);
-            entervaluesinstance.details();
             
+            DeleteData deleteinstance = new DeleteData(driver);
+            deleteinstance.DeleteConfirm();
+
 
         }
     }
 }
 
-           
+
 
 
 
