@@ -31,7 +31,7 @@ namespace Firstautomation
                         IWebElement code = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[" + i + "]/td[1]"));
 
 
-                        if (code.Text == "MITSUB") 
+                        if (code.Text == "SUB") 
                         {
                             driver.FindElement(By.XPath("(//a[contains(.,'Edit')])[8]")).Click();
                             driver.FindElement(By.XPath("//input[@id='Code']")).Clear();

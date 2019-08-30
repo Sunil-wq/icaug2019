@@ -5,5 +5,8 @@
 @mtm @automate
 Scenario: Turn up admin able to create time and material records
 	Given I have loggedin to the turn up portal
-	And I have navigate to time and material page
-	Then I should be able to create time and material records
+	And I should be able to create time and material records
+	And I should be able to edit values
+	Then i should be able to delete records
+
+

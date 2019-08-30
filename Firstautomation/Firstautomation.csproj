@@ -98,7 +98,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hookup\TMFeatureSteps.cs" />
     <Compile Include="Pages\DeleteData.cs" />
     <Compile Include="Pages\EditData.cs" />
     <Compile Include="Pages\EnterValues.cs" />
@@ -107,6 +106,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\SecondValidate.cs" />
+    <Compile Include="Hookup\TMFeatureSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
