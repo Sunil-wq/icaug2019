@@ -10,7 +10,7 @@ namespace Firstautomation
     public class TMFeatureSteps
     {
         IWebDriver driver;
-        
+
 
 
         [Given(@"I have loggedin to the turn up portal")]
@@ -35,14 +35,13 @@ namespace Firstautomation
         {
             EditData editinstance = new EditData(driver);
             editinstance.editing();
-           // editinstance.EditConfirm();
+            // editinstance.EditConfirm();
         }
-        
+
         [Then(@"i should be able to delete records")]
         public void ThenIShouldBeAbleToDeleteRecords()
         {
             DeleteData deleteinstance = new DeleteData(driver);
-            Thread.Sleep(3000);
             deleteinstance.DeleteConfirm();
             driver.Quit();
         }

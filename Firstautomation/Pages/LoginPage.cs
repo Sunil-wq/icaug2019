@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Firstautomation.Utilites;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +27,10 @@ namespace Firstautomation
        
         internal void LoginSucess()
         {
-            
-          
-            firstname.SendKeys("hari");
+
+            String usernameJS = "document.getElementById('UserName').value='hari'";
+            JsExecutor.Script(driver, usernameJS);
+            //firstname.SendKeys("hari");
           
             password.SendKeys("123123");
          

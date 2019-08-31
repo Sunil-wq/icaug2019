@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using Firstautomation.Utilites;
 using OpenQA.Selenium;
 
 namespace Firstautomation
@@ -16,7 +17,8 @@ namespace Firstautomation
         internal void validation()
         {
 
-            Thread.Sleep(3000);
+            //  Thread.Sleep(3000);
+            Wait.ElementIsVisible(driver, "//span[@class='k-icon k-i-arrow-e'][contains(.,'Go to the next page')]", "XPath");
             try
             {
                 while (true)

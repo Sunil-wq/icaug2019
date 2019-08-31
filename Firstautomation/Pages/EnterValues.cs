@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Firstautomation.Utilites;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
@@ -21,11 +22,14 @@ namespace Firstautomation
             driver.FindElement(By.XPath("//a[@href='#'][contains(.,'Administration')]")).Click();
             driver.FindElement(By.XPath("//a[@href='/TimeMaterial']")).Click();
             driver.FindElement(By.XPath("//a[@href='/TimeMaterial/Create']")).Click();
-           // Thread.Sleep(30000);
-           // SelectElement s = new SelectElement(driver.FindElement(By.XPath("(//span[@unselectable='on'])[3]")));
-           // s.SelectByText("Time");
-            
-            sun.SendKeys("SUB");
+            Thread.Sleep(3000);
+            // SelectElement s = new SelectElement(driver.FindElement(By.XPath("(//span[@unselectable='on'])[3]")));
+            // s.SelectByText("Time");
+
+              sun.SendKeys("SUB");
+           
+          //  String brandJS = "document.getElementByXPath('//input[@id='Code']').value='SUB'";
+          //  JsExecutor.Script(driver, brandJS);
             driver.FindElement(By.XPath("//input[@id='Description']")).SendKeys("WREXY");
             driver.FindElement(By.XPath("//input[contains(@class,'k-formatted-value k-input')]")).SendKeys("40000");
             Thread.Sleep(3000);
