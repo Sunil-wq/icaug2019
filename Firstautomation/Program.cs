@@ -44,8 +44,8 @@ namespace Firstautomation
             fvalidate.validate();
             EnterValues entervaluesinstance = new EnterValues(driver);
             entervaluesinstance.details();
-           // SecondValidate svalidate = new SecondValidate(driver);
-           // svalidate.validation();
+            entervaluesinstance.validation();
+         
         }
 
 

@@ -1,18 +1,15 @@
-﻿using OpenQA.Selenium;
+﻿using java.sql;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
-using System.Threading;
 using TechTalk.SpecFlow;
 
-namespace Firstautomation
+namespace Firstautomation.Hookup
 {
     [Binding]
     public class TMFeatureSteps
     {
         IWebDriver driver;
-
-
-
         [Given(@"I have loggedin to the turn up portal")]
         public void GivenIHaveLoggedinToTheTurnUpPortal()
         {
@@ -22,28 +19,45 @@ namespace Firstautomation
             LoginPage logininstance = new LoginPage(driver);
             logininstance.LoginSucess();
         }
+
+        [Given(@"Navigate to home page")]
+        public void GivenNavigateToHomePage()
+        {
+
+            FirstValidate fvaliadteinstance = new FirstValidate(driver);
+            fvaliadteinstance.validate();
+        }
+
+
         [Given(@"I should be able to create time and material records")]
         public void GivenIShouldBeAbleToCreateTimeAndMaterialRecords()
-        {
-
+    {
+           
             EnterValues entervaluesinstance = new EnterValues(driver);
-            entervaluesinstance.details();
-        }
-
-        [Given(@"I should be able to edit values")]
-        public void GivenIShouldBeAbleToEditValues()
-        {
-            EditData editinstance = new EditData(driver);
-            editinstance.editing();
-            // editinstance.EditConfirm();
-        }
-
-        [Then(@"i should be able to delete records")]
-        public void ThenIShouldBeAbleToDeleteRecords()
-        {
-            DeleteData deleteinstance = new DeleteData(driver);
-            deleteinstance.DeleteConfirm();
+        entervaluesinstance.details();
             driver.Quit();
+
         }
+
+    [Given(@"I should be able to edit time and material records")]
+        public void GivenIShouldBeAbleToEditTimeAndMaterialRecords()
+        {
+        
+        EditData editinstance = new EditData(driver);
+        editinstance.editing();
+        driver.Quit();
+
+
+        }
+
+    [Given(@"I should be able to delete time and material records")]
+        public void GivenIShouldBeAbleToDeleteTimeAndMaterialRecords()
+        {
+        
+         DeleteData deleteinstance = new DeleteData(driver);
+        deleteinstance.DeleteConfirm();
+        driver.Quit();
+
     }
+}
 }

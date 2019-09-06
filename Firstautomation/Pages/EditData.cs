@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Firstautomation.Utilites;
+using OpenQA.Selenium;
 using System;
 using System.Threading;
 
@@ -20,8 +21,9 @@ namespace Firstautomation
         {
             driver.FindElement(By.XPath("//a[@href='#'][contains(.,'Administration')]")).Click();
             driver.FindElement(By.XPath("//a[@href='/TimeMaterial']")).Click();
-            
-            Thread.Sleep(3000);
+           
+
+            Wait.ElementIsVisible(driver, "//span[@class='k-icon k-i-arrow-e'][contains(.,'Go to the next page')]", "XPath"); 
             try
             {
                 while(true)
@@ -33,13 +35,17 @@ namespace Firstautomation
 
                         if (code.Text == "SUB") 
                         {
+                        
+                           
                             driver.FindElement(By.XPath("(//a[contains(.,'Edit')])[8]")).Click();
+                            Thread.Sleep(3000);
+                            ExcelLibHelpers.PopulateInCollection(@"C:\Users\Owner\source\repos\Firstautomation\Firstautomation\TestData\TestData.xls", "Mysheet");
                             driver.FindElement(By.XPath("//input[@id='Code']")).Clear();
-                            driver.FindElement(By.XPath("//input[@id='Code']")).SendKeys("HYU");
+                            driver.FindElement(By.XPath("//input[@id='Code']")).SendKeys(ExcelLibHelpers.ReadData(3, "Code"));
 
                             driver.FindElement(By.XPath("//input[@id='Description']")).Clear();
 
-                            driver.FindElement(By.XPath("//input[@id='Description']")).SendKeys("NLIN");
+                            driver.FindElement(By.XPath("//input[@id='Description']")).SendKeys(ExcelLibHelpers.ReadData(3, "Description"));
 
                             //  driver.FindElement(By.Id("Price")).Clear();
 
@@ -66,6 +72,7 @@ namespace Firstautomation
         }
         internal void EditConfirm()
         {
+            Wait.ElementIsVisible(driver, "//span[@class='k-icon k-i-arrow-e'][contains(.,'Go to the next page')]", "XPath");
             try
             {
                 for (int i = 1; i <= 10; i++)

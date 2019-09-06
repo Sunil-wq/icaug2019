@@ -18,17 +18,19 @@ namespace Firstautomation
             
             IWebElement Code = driver.FindElement(By.XPath("//a[@href='#'][contains(.,'Hello hari!')]"));
             Console.WriteLine("Code" + Code.Text);
-           // if (Code.Text == "Hello hari!")
-           // {
-           //     Console.WriteLine("test passed");
-          //  }
-          //  else
-          //  {
-           //     Console.WriteLine("test failed");
-          //  }
+               
+            //Aseert Statement
             Assert.That(Code.Text, Is.EqualTo("Hello hari!"));
-             
-                
+            // if (Code.Text == "Hello hari!")
+            // {
+            //     Console.WriteLine("test passed");
+            //  }
+            //  else
+            //  {
+            //     Console.WriteLine("test failed");
+            //  }
+
+
         }
     }
 }

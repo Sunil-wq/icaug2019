@@ -85,11 +85,53 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.Given("I have loggedin to the turn up portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.And("I should be able to create time and material records", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Navigate to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.And("I should be able to edit values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
- testRunner.Then("i should be able to delete records", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I should be able to create time and material records", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Turn up admin able to edit time and material records")]
+        [NUnit.Framework.CategoryAttribute("mtm")]
+        [NUnit.Framework.CategoryAttribute("automate")]
+        public virtual void TurnUpAdminAbleToEditTimeAndMaterialRecords()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Turn up admin able to edit time and material records", null, new string[] {
+                        "mtm",
+                        "automate"});
+#line 13
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 14
+ testRunner.Given("I have loggedin to the turn up portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+ testRunner.And("Navigate to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And("I should be able to edit time and material records", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Turn up admin able to delete time and material records")]
+        [NUnit.Framework.CategoryAttribute("mtm")]
+        [NUnit.Framework.CategoryAttribute("automate")]
+        public virtual void TurnUpAdminAbleToDeleteTimeAndMaterialRecords()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Turn up admin able to delete time and material records", null, new string[] {
+                        "mtm",
+                        "automate"});
+#line 20
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 21
+ testRunner.Given("I have loggedin to the turn up portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 22
+ testRunner.And("Navigate to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And("I should be able to delete time and material records", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

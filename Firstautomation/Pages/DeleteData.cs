@@ -18,8 +18,8 @@ namespace Firstautomation
         {
             driver.FindElement(By.XPath("//a[@href='#'][contains(.,'Administration')]")).Click();
             driver.FindElement(By.XPath("//a[@href='/TimeMaterial']")).Click();
-
-            //Thread.Sleep(3000);
+            Thread.Sleep(3000);
+            //Explicit Wait
             Wait.ElementIsVisible(driver, "//span[@class='k-icon k-i-arrow-e'][contains(.,'Go to the next page')]", "XPath");
             try
             {
@@ -30,20 +30,21 @@ namespace Firstautomation
                         IWebElement code = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[" + i + "]/td[1]"));
 
 
-                        if (code.Text == "Key_123")
+                        if (code.Text == "MIT")
                         {
 
-                           // Thread.Sleep(3000);
+                            Thread.Sleep(3000);
                             driver.FindElement(By.XPath("(//a[@class='k-button k-button-icontext k-grid-Delete'])[8]")).Click();
 
-                           // Thread.Sleep(3000);
+                            Thread.Sleep(3000);
                             driver.SwitchTo().Alert().Accept();
                             return;
                         }
                     }
 
                     driver.FindElement(By.XPath("//span[@class='k-icon k-i-arrow-e'][contains(.,'Go to the next page')]")).Click();
-                    Thread.Sleep(3000);
+                    
+                    
                 }
             }
             catch (Exception)
